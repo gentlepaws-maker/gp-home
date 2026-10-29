@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GTP Daily Sales</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GTP Daily Sales">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="robots" content="noindex">
+<style>
+  html,body{margin:0;height:100%;background:#fff;font-family:-apple-system,system-ui,sans-serif}
+  iframe{border:0;width:100%;height:100%;display:block}
+  p{margin:40vh 24px 0;text-align:center;color:#6e6e73}
+</style>
+</head>
+<body>
+<script>
+  // The Apps Script deployment ID travels in the link's #hash, so it never sits in this public repo.
+  var id = location.hash.slice(1);
+  if (/^AKfy[\w-]+$/.test(id)) {
+    var f = document.createElement('iframe');
+    f.src = 'https://script.google.com/macros/s/' + id + '/exec';
+    f.title = 'Gentle Paws Daily Sales';
+    document.body.appendChild(f);
+  } else {
+    document.body.innerHTML = '<p>ลิงก์ไม่ครบ กรุณาเปิดจากลิงก์ที่ทีมส่งให้</p>';
+  }
+</script>
+</body>
+</html>
